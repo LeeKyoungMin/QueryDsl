@@ -1,0 +1,47 @@
+server:
+  port: 8081
+  shutdown: graceful
+
+spring:
+    datasource:
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432
+      username: postgres
+      password: new1234!
+      hikari:
+        maximum-pool-size: 100
+        connection-timeout: 5000
+        validation-timeout: 4000
+        max-lifetime: 600000
+      type: com.zaxxer.hikari.HikariDataSource
+
+    # datasource:
+    #   driver-class-name: mongodb.jdbc.MongoDriver
+    #   url: jdbc:mongo://localhost:27017/admin #dbc:mongo://<\serverName>/<\databaseName>
+    #   username: act_user
+    #   password: new1234!
+    #   hikari:
+    #     maximum-pool-size: 100
+    #     connection-timeout: 5000
+    #     validation-timeout: 4000
+    #     max-lifetime: 600000
+    #   type: com.zaxxer.hikari.HikariDataSource
+
+
+    config:
+        activate:
+          on-profile: default
+    
+    data:
+      mongodb:
+        host: localhost
+        port: 27017
+        userName: act_user
+        password: new1234!
+        database: admin
+        # username: act_user
+        # password: sksmsahffk1!
+
+        # spring.data.mongodb.uri=mongodb://[ip 정보]:[port 정보]
+        # spring.data.mongodb.database=[데이터베이스 이름]
+        # mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
